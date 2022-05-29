@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 // import format from "date-fns/format"
 // You can use the import above or the one below
 import { format } from "date-fns";
-
+import "";
 
 export default function FetchNews() {
   const [items, setItems] = useState([]);
