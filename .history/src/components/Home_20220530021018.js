@@ -2,7 +2,6 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import { useUserAuth } from "../context/UserAuthContext";
-import FetchNews from "./FetchNews";
 
 const Home = () => {
   const { logOut, user } = useUserAuth();
@@ -26,7 +25,7 @@ const Home = () => {
           Log out
         </Button>
       </div>
-      <FetchNews/>
+      <
     </>
   );
 };

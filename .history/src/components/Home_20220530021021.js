@@ -26,7 +26,7 @@ const Home = () => {
           Log out
         </Button>
       </div>
-      <FetchNews/>
+      <FetchNews
     </>
   );
 };
