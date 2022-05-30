@@ -17,7 +17,7 @@ const Home = () => {
   };
   return (
     <div>
-      <div className="p-4 box mt-3 text-center">
+      <div className="container">
         Hello Welcome <br />
         {user && user.email}
       </div>
@@ -27,7 +27,7 @@ const Home = () => {
         </Button>
       </div>
       <div>
-        <FetchNews/>
+        <FetchNews />
       </div>
     </div>
   );

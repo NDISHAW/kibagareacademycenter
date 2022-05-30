@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 // import format from "date-fns/format"
 // You can use the import above or the one below
 import { format } from "date-fns";
-
+import { Button } from "react-bootstrap";
 
 
 export default function FetchNews() {
@@ -77,7 +77,7 @@ export default function FetchNews() {
             </form>
             {/* End of search form */}
 
-            <article className="my-10 flex flex-col items-center justify-center container lg:max-w-4xl mx-auto px-5">
+            <article className="my-10 flex flex-col items-center justify-center container lg:max-w-4xl mx-auto px-5 col">
               <h1 className="font-bold text-center text-4xl my-5 text-white lg:text-6xl">
                 {largeTitle.title}
               </h1>

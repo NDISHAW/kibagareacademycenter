@@ -26,9 +26,6 @@ const Home = () => {
           Log out
         </Button>
       </div>
-      <div>
-        <FetchNews/>
-      </div>
     </div>
   );
 };

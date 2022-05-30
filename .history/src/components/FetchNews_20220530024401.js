@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { format } from "date-fns";
 
 
-
 export default function FetchNews() {
   const [items, setItems] = useState([]);
   const [query, setQuery] = useState("programming");
@@ -100,7 +99,7 @@ export default function FetchNews() {
               </p>
             </article>
 
-            <section className="grid grid-cols-1 gap-5 p-5 md:grid-cols-2 container mx-auto lg:max-w-xl">
+            <section className="grid grid-cols-1 gap-5 p-5 md:grid-cols-2 container mx-auto lg:max-w-8xl">
               {items.map((item) => {
                 const { author, created_at, objectID, title, url } = item;
 

@@ -17,17 +17,17 @@ const Home = () => {
   };
   return (
     <div>
-      <div className="p-4 box mt-3 text-center">
+      <div className="container">
         Hello Welcome <br />
         {user && user.email}
       </div>
-      <div className="d-grid gap-2">
+      <div className="row">
         <Button variant="primary" onClick={handleLogout}>
           Log out
         </Button>
       </div>
       <div>
-        <FetchNews/>
+        <FetchNews />
       </div>
     </div>
   );

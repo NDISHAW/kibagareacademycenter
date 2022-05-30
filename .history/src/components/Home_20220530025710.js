@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import { Button,Container,Row, } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import { useUserAuth } from "../context/UserAuthContext";
 import FetchNews from "./FetchNews";
@@ -17,17 +17,17 @@ const Home = () => {
   };
   return (
     <div>
-      <div className="p-4 box mt-3 text-center">
+      <div className="Container">
         Hello Welcome <br />
         {user && user.email}
       </div>
-      <div className="d-grid gap-2">
+      <div className="Row">
         <Button variant="primary" onClick={handleLogout}>
           Log out
         </Button>
       </div>
       <div>
-        <FetchNews/>
+        <FetchNews />
       </div>
     </div>
   );

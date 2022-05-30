@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { format } from "date-fns";
 
 
-
 export default function FetchNews() {
   const [items, setItems] = useState([]);
   const [query, setQuery] = useState("programming");

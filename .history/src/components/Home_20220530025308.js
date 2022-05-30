@@ -27,7 +27,7 @@ const Home = () => {
         </Button>
       </div>
       <div>
-        <FetchNews/>
+        
       </div>
     </div>
   );
