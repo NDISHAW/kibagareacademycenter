@@ -1,5 +1,5 @@
 import axios from "axios";
-import "./index.js";
+
 import React, { useState, useEffect } from "react";
 import BootstrapTable from "react-bootstrap-table-next";
 import paginationFactory from "react-bootstrap-table2-paginator";

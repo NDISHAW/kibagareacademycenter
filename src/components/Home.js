@@ -1,5 +1,5 @@
 import React from "react";
-import { Button , Card} from "react-bootstrap";
+import { Button , Table} from "react-bootstrap";
 import { useNavigate } from "react-router";
 import { useUserAuth } from "../context/UserAuthContext";
 import Students from "./Students";
@@ -30,9 +30,9 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Card>
+      <Table>
         <Students />
-      </Card>
+      </Table>
     </>
   );
 };
