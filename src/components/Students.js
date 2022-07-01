@@ -6,10 +6,39 @@ import paginationFactory from "react-bootstrap-table2-paginator";
 import cellEditFactory, { Type } from "react-bootstrap-table2-editor";
 import filterFactory, { textFilter } from "react-bootstrap-table2-filter";
 function Students() {
+  const [editFormData, setEditFormData] = useState({
+    fullName: "",
+    address: "",
+    phoneNumber: "",
+    email: "",
+  });
+
+  
+
+  const [addFormData, setAddFormData] = useState({
+    Full_names: "",
+    admision_number: "",
+    date_of_birth: "",
+    level: "",
+    updated_at: "",
+  });
   const [data, setData] = useState([]);
   useEffect(() => {
     getData();
   }, []);
+
+  const handleAddFormChange = (event) => {
+    event.preventDefault();
+
+    const fieldName = event.target.getAttribute("name");
+    const fieldValue = event.target.value;
+
+    const newFormData = { ...addFormData };
+    newFormData[fieldName] = fieldValue;
+
+    setAddFormData(newFormData);
+  };
+
   const getData = () => {
     axios("http://localhost:9292/students").then((res) => {
       console.log(res.data);
@@ -91,36 +120,104 @@ function Students() {
       },
     },
   ];
+  function handleEditFormChange(e){
+    e.preventDefault();
+    const fieldName = e.target.getAttribute("name");
+    const fieldValue = e.target.value;
 
-  // const updateStudent = () => {
-  //   axios.put(`http://localhost:9292/students${admision_number}`,
-  //   {
-  //     Full_names,
-  //     admision_number,
-  //     date_of_birth,
-  //     level,
-  //     updated_at
-  //   });
+    const newFormData = { ...editFormData };
+    newFormData[fieldName] = fieldValue;
+
+    setEditFormData(newFormData);
+  };
+  function handleAddFormSubmit(e) {
+    e.preventDefault();
+    const newdata = {
+      Full_names: addFormData.Full_names,
+      admision_number: addFormData.admision_number,
+      date_of_birth: addFormData.date_of_birth,
+      level: addFormData.level,
+      updated_at: addFormData.updated_at,
+    };
+    const newDatas = [...data, newdata];
+    setData(newDatas);
+  }
+  // const updateStudent = async (data) => {
+  //   data = "Updated";
+  //   await axios.put(`http://localhost:9292/students/update`, data.id);
+  //   const dataClone = [...data];
+  //   const index = dataClone.indexOf(data);
+  //   dataClone[index] = { ...data };
+  //   setData(dataClone);
+  // };
+  // const updateStudent = (values) => {
+  //   const student = {
+  //     Full_names: values.Full_names,
+  //     admision_number: values.admision_number,
+  //     date_of_birth: values.date_of_birth,
+  //     level: values.level,
+  //     updated_at: values.updated_at,
+  //   }
+  //   axios.put(`http://localhost:9292/students/update${values.id}`, student)
+  //   .then(res =>
+  //     setData(res.data));
   // };
   return (
     <div className="App">
-      <BootstrapTable
-        keyField="id"
-        data={data}
-        columns={columns}
-        striped
-        hover
-        condensed
-        pagination={paginationFactory()}
-        cellEdit={cellEditFactory({
-          mode: "dbclick",
-          blurToSave: true,
-          nonEditableColumns: () => [1, 2, 3],
-        })}
-        selectRow={selectRow}
-        filter={filterFactory()}
-      />
-      {/* <button onClick={updateStudent}>Update STUDENT</button> */}
+      <form onSubmit={handleAddFormSubmit}>
+        <BootstrapTable
+          keyField="id"
+          data={data}
+          columns={columns}
+          striped
+          hover
+          condensed
+          pagination={paginationFactory()}
+          cellEdit={cellEditFactory({
+            mode: "dbclick",
+            blurToSave: true,
+            nonEditableColumns: () => [1, 2, 3],
+          })}
+          selectRow={selectRow}
+          filter={filterFactory()}
+        />
+        <button type="submit" onClick={handleEditFormChange}>
+          Update STUDENT
+        </button>
+      </form>
+
+      <h2>Add a Student</h2>
+      <form onSubmit={handleAddFormSubmit}>
+        <input
+          type="text"
+          name="Full_names"
+          required="required"
+          placeholder="Enter a name..."
+          onChange={handleAddFormSubmit}
+        />
+        <input
+          type="text"
+          name="admision_number"
+          required="required"
+          placeholder="Enter an admn_number..."
+          onChange={handleAddFormSubmit}
+        />
+        <input
+          type="text"
+          name="date_of_birth"
+          required="required"
+          placeholder="Enter a  D.O.B..."
+          onChange={handleAddFormSubmit}
+        />
+        <input
+          type="text"
+          name="level"
+          required="required"
+          placeholder="Enter an Grade..."
+          onChange={handleAddFormSubmit}
+        />
+        <button type="submit" onClick={handleAddFormSubmit}>Add</button>
+      </form>
     </div>
   );
 }
