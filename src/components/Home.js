@@ -2,7 +2,7 @@ import React from "react";
 import { Button , Card} from "react-bootstrap";
 import { useNavigate } from "react-router";
 import { useUserAuth } from "../context/UserAuthContext";
-import FetchNews from "./FetchNews";
+import Students from "./Students";
 
 const Home = () => {
   const { logOut, user } = useUserAuth();
@@ -17,7 +17,7 @@ const Home = () => {
   };
   return (
     <>
-      <div style={{ width: "400px",display: 'flex' }}>
+      <div style={{ width: "400px", display: "flex" }}>
         <div>
           <div className="p-4 box mt-3 text-center text-white ">
             Hello Welcome <br />
@@ -31,7 +31,7 @@ const Home = () => {
         </div>
       </div>
       <Card>
-        <FetchNews />
+        <Students />
       </Card>
     </>
   );
