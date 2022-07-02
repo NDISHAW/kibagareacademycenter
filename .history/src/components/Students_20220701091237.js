@@ -40,7 +40,7 @@ function Students() {
   };
 
   const getData = () => {
-    axios("https://michegwwe.herokuapp.com/students").then((res) => {
+    axios("http://localhost:9292/students").then((res) => {
       console.log(res.data);
       setData(res.data);
     });
