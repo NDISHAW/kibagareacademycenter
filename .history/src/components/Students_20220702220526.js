@@ -116,15 +116,9 @@ function Students() {
             value: "Grade 4",
             label: "Grade 4",
           },
+          
         ],
       },
-    },
-    {
-      dataField: "SAVE",
-      text: "SAVE",
-      sort: false,
-      editable: false,
-      type: "button"
     },
   ];
   function handleEditFormChange(e){

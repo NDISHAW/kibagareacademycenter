@@ -121,10 +121,9 @@ function Students() {
     },
     {
       dataField: "SAVE",
-      text: "SAVE",
+      text: "Full_Names",
       sort: false,
-      editable: false,
-      type: "button"
+      editable: true,
     },
   ];
   function handleEditFormChange(e){

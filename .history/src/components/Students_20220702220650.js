@@ -123,7 +123,7 @@ function Students() {
       dataField: "SAVE",
       text: "SAVE",
       sort: false,
-      editable: false,
+      editable: true,
       type: "button"
     },
   ];

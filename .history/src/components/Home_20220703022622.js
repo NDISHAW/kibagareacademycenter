@@ -23,7 +23,7 @@ const Home = () => {
             Hello Welcome 
             {user && user.email}
           </div>
-          <div className="d-grid ">
+          <div className="d-grid gap-1">
             <Button variant="primary" onClick={handleLogout}>
               Log out
             </Button>

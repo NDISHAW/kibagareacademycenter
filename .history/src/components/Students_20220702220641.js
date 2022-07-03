@@ -123,8 +123,8 @@ function Students() {
       dataField: "SAVE",
       text: "SAVE",
       sort: false,
-      editable: false,
-      type: "button"
+      editable: true,
+      type:
     },
   ];
   function handleEditFormChange(e){

@@ -119,13 +119,6 @@ function Students() {
         ],
       },
     },
-    {
-      dataField: "SAVE",
-      text: "SAVE",
-      sort: false,
-      editable: false,
-      type: "button"
-    },
   ];
   function handleEditFormChange(e){
     e.preventDefault();
@@ -134,7 +127,7 @@ function Students() {
 
     const newFormData = { ...editFormData };
     newFormData[fieldName] = fieldValue;
-    console.log(newFormData);
+    log
     setEditFormData(newFormData);
   };
   function handleAddFormSubmit(e) {
