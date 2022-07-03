@@ -77,7 +77,7 @@ function MTStudet() {
               },
               body: JSON.stringify(newData)
             }).then(resp => resp.json())
-              .then(resp => {(getStudents());resolve()})
+              .then(resp => {resp(getStudents());resolve()})
           }),
           onRowDelete: (oldData) => new Promise((resolve, reject) => {
             //Backend call

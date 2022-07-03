@@ -68,20 +68,20 @@ function MTStudet() {
                 resolve()
               })
           }),
-          onRowUpdate: (newData, oldData) => new Promise((resolve, reject) => {
-            //Backend call
-            fetch(url + "/" + oldData.admision_number, {
+          : (newData, oldData) => new Promise((resolve, reject) => {
+            //Backend callonRowUpdate
+            fetch(url + "/" + oldData.id, {
               method: "PATCH",
               headers: {
                 'Content-type': "application/json"
               },
               body: JSON.stringify(newData)
             }).then(resp => resp.json())
-              .then(resp => {(getStudents());resolve()})
+              .then(resp => {resp(getStudents());resolve()})
           }),
           onRowDelete: (oldData) => new Promise((resolve, reject) => {
             //Backend call
-            fetch(url + "/" + oldData.admision_number, {
+            fetch(url + "/" + oldData.ID, {
               method: "DELETE",
               headers: {
                 'Content-type': "application/json"

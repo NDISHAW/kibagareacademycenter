@@ -16,10 +16,9 @@ function MTStudet() {
   }
   const columns = [
     {
-      title: "NAMES",
+      title: "Full_names",
       field: "Full_names",
-      validate: (rowData) =>
-        rowData.Full_names === undefined || rowData.Full_names === ""
+      validate: (rowData) =>rowData.Full_names === undefined || rowData.Full_names === ""
           ? "Required": true,
     },
     {
@@ -71,13 +70,13 @@ function MTStudet() {
           onRowUpdate: (newData, oldData) => new Promise((resolve, reject) => {
             //Backend call
             fetch(url + "/" + oldData.admision_number, {
-              method: "PATCH",
+              method: "PUT",
               headers: {
                 'Content-type': "application/json"
               },
               body: JSON.stringify(newData)
             }).then(resp => resp.json())
-              .then(resp => {(getStudents());resolve()})
+              .then(resp => {resp(getStudents());resolve()})
           }),
           onRowDelete: (oldData) => new Promise((resolve, reject) => {
             //Backend call
