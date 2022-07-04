@@ -16,10 +16,10 @@ function MTStudet() {
   }
   const columns = [
     {
-      title: "admision_number",
-      field: "admision_number",
+      title: "NAMES",
+      field: "Full_names",
       validate: (rowData) =>
-        rowData.admision_number === undefined || rowData.admision_number === ""
+        rowData.Full_names === undefined || rowData.Full_names === ""
           ? "Required"
           : true,
     },
